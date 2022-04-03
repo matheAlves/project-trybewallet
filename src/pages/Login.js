@@ -70,7 +70,7 @@ class Login extends React.Component {
             name="password"
             placeholder="password"
             data-testid="password-input"
-            type="text"
+            type="password"
             id="password-input"
             onChange={ this.handleChange }
           />
