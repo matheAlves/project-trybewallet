@@ -1,0 +1,10 @@
+.form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  align-self: center;
+  width: 100px;
+}
