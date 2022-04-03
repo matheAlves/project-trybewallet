@@ -51,7 +51,7 @@ class Login extends React.Component {
   render() {
     const { buttonDisabled, email, password } = this.state;
     return (
-      <div className="form">
+      <form>
         Login
         <label htmlFor="email-input">
           <input
@@ -83,8 +83,7 @@ class Login extends React.Component {
         >
           Entrar
         </button>
-
-      </div>
+      </form>
     );
   }
 }
