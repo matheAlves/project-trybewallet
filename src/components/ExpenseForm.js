@@ -37,9 +37,12 @@ class ExpenseForm extends React.Component {
   handleSubmit = () => {
     const { dispatchExpense, expenses } = this.props;
     this.setState({
-      id: expenses.length
+      id: expenses.length,
     }, () => {
       dispatchExpense(this.state);
+      this.setState({
+        value: 0,
+      });
     });
   }
 
@@ -106,7 +109,7 @@ class ExpenseForm extends React.Component {
         <label htmlFor="tag-input">
           Categoria:
           <select
-            name="category"
+            name="tag"
             id="tag-input"
             data-testid="tag-input"
             onChange={ this.handleChange }
@@ -129,6 +132,8 @@ class ExpenseForm extends React.Component {
 
 ExpenseForm.propTypes = {
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  dispatchExpense: PropTypes.func.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = (state) => ({

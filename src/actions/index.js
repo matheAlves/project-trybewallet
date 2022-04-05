@@ -2,7 +2,7 @@ import getCurrencies from '../services/currencyAPI';
 
 export const USER_ACTION = 'USER_ACTION';
 export const CURRENCIES_ACTION = 'CURRENCIES_ACTION';
-export const ADD_EXPENSE = 'ADD_EXPENSE'
+export const ADD_EXPENSE = 'ADD_EXPENSE';
 
 export const userAction = (email) => ({
   type: USER_ACTION,
@@ -30,9 +30,13 @@ export const addExpense = (newExpense, exchangeRates) => ({
 });
 
 const fetchCurrencies = (newExpense) => async (dispatch) => {
+  const exchangeRates = {};
   const response = await getCurrencies();
-  const exchangeRates = Object.entries(response);
-  // console.log(exchangeRates);
+  const data = Object.entries(response);
+  data.forEach((currency) => {
+    const [code, currencyData] = currency;
+    exchangeRates[code] = currencyData;
+  });
   dispatch(addExpense(newExpense, exchangeRates));
 };
 

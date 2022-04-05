@@ -1,5 +1,4 @@
-import { CURRENCIES_ACTION } from '../actions';
-import { ADD_EXPENSE } from '../actions';
+import { CURRENCIES_ACTION, ADD_EXPENSE } from '../actions';
 
 const initialState = {
   currencies: [],
