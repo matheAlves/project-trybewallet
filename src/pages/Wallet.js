@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import ExpenseForm from '../components/ExpenseForm';
-import { actionFetchCurrencies } from '../actions';
+import { actionFetchCurrenciesKeys } from '../actions';
 
 class Wallet extends React.Component {
   componentDidMount() {
@@ -27,7 +27,7 @@ Wallet.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  getCurrencies: () => dispatch(actionFetchCurrencies()),
+  getCurrencies: () => dispatch(actionFetchCurrenciesKeys()),
 });
 
 export default connect(null, mapDispatchToProps)(Wallet);
