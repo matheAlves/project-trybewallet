@@ -8,12 +8,12 @@ function App() {
     <Switch>
       <Route
         exact
-        path="/"
+        path="/project-trybewallet/"
         component={ Login }
       />
       <Route
         exact
-        path="/carteira"
+        path="/project-trybewallet/carteira"
         component={ Wallet }
       />
     </Switch>
